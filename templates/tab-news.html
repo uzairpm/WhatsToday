@@ -1,0 +1,20 @@
+<ion-view view-title="Today's News">
+  <ion-content direction="y">
+      <div class="item item-divider item-icon-right">
+        <input type="text" ng-model="searchTerm" placeholder="Search Term Eg:Flipkart">
+        <button class="button button-small button-clear button-positive icon ion-search" ng-click="getNews()"></button>
+      </div>
+      
+    <div class="list card" ng-repeat="item in news">
+      <div class="item item-divider"><a ng-href="{{ item.unescapedUrl }}">
+            {{item.titleNoFormatting}}</a>
+        </div>
+        <div class="item item-body">
+          <div>
+            {{item.content}}
+          </div>
+        </div>  
+    </div>
+      
+  </ion-content>
+</ion-view>
